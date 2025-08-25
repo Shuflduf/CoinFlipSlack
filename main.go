@@ -28,5 +28,8 @@ func coinHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/coin", coinHandler)
-	http.ListenAndServe(":8080", nil)
+  err := http.ListenAndServe(":8085", nil)
+  if err != nil {
+      panic(err)
+  }
 }
